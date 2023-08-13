@@ -3,6 +3,6 @@ from .import views
 
 
 urlpatterns = [
-    path('',views.blog),
+    path('blg/',views.blog, name='blog'),
 
 ]

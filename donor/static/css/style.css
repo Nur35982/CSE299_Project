@@ -1,8 +1,14 @@
-body{
-    background-color: aqua;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
 }
-h1{
-    color: azure;
-    font-weight: 900;
-    font-size: 20px;
+.navbar-brand{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
 }

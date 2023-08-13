@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer</title>
+</head>
+<body>
+    <h1>{{vlntr}}</h1>
+    {% if vlntr %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>VID</th>
+            <th>VName</th>
+            <th>VEmail</th>
+        </tr>
+        {% for th in vlntr %}
+        <tr>
+            <td>{{th.id}}</td>
+            <td>{{th.vid}}</td>
+            <td>{{th.vname}}</td>
+            <td>{{th.vemail}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h2>Empty db</h2>
+    {% endif %}
+</body>
+</html>
