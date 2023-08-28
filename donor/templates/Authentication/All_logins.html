@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center" style="text-align: center;">Login As a....</h2>
+        <div class="row mt-5">
+            <div class="col-lg-4">
+                <div class="card" style="width:300px;">
+                    <img src="{% static 'images\donor.jpg' %}" class="card-img-top" style="width:100%;height:200px">
+                    <div class="card-body">
+                        <h4 class="card-title">Donor</h4>
+                        <p class="card-text">Some example text</p>
+                        <a href="{% url 'signin' %}" class="btn btn-primary">Go To Donor Login</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card" style="width:300px">
+                    <img src="{% static 'images\volunteer-1888823_1920.png' %}" class="card-img-top" style="width:100%;height:200px">
+                    <div class="card-body">
+                        <h4 class="card-title">Volunteer</h4>
+                        <p class="card-text">Some example text</p>
+                        <a href="{% url 'volunteer' %}" class="btn btn-primary">Go To Volunteer Login</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card" style="width:300px">
+                    <img src="{% static 'images\admin.jpg' %}" class="card-img-top" style="width:100%;height:200px">
+                    <div class="card-body">
+                        <h4 class="card-title">Admin</h4>
+                        <p class="card-text">Some example text</p>
+                        <a href="" class="btn btn-primary">Go To Admin Login</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>
