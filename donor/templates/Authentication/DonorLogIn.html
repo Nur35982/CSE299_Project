@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css/' %}">
+</head>
+<body id="login">
+    {% include 'common_code/base.html' %}
+    
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 50vh;">
+    <div class="row">
+        <div class="col-lg-5 mb-5">
+            <div class="card mt-5 bg-dark">
+                <div class="card-title text-center mt-3">
+                    <img src="{% static 'images/donor_login.png' %}" width="150" height="150">
+                    <h2 class="text-white">Donor Login</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="input-group mb-0">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-user fa-2x"></i>
+                                </span>
+                            </div>
+                            <input type="email" name="emailid" class="form-control py-4" placeholder="Email ID">
+                        </div>
+
+                        <div class="input-group mb-0">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-lock fa-2x"></i>
+                                </span>
+                            </div>
+                            <input type="password" name="pwd" class="form-control py-4" placeholder="Password">
+                        </div>
+                        <input type="submit" value="Login" class="btn btn-success px-4">
+                        <a href="{% url 'donor_reg' %}" class="float-right text-white mt-2">Create account</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    {% if error == "no" %}
+    <script>
+        alert('Logged In Successfully');
+        window.location=('{% url 'donor_home' %}');
+    </script>
+    {% endif %}
+    {% if error == "yes" %}
+    <script>
+        alert('Invalid Login Credentials , Try Again...');
+    </script>
+    {% endif %}
+
+
+    {% include 'Home/Footer.html' %}
+</body>
+</html>

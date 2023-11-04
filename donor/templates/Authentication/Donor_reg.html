@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css/' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>SignUp</title>
+
+    <script>
+        function checkpassword()
+        {
+            if(document.signup.pwd.value!=document.signup.cpwd.value)
+            {
+                alert('Password and Confirm Password field does not same');
+                document.signup.cpwd.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    {% include 'common_code/base.html' %}
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 50vh;">
+    <hr class="mt-0">
+    <div class="card shadow m-5" id="signupform">
+        <div class="card-body">
+            <h5 class="p-4 text-white" style="border-bottom : 2px solid orange">Creat an Account (Donor)</h5>
+            <div class="container-fluid">
+                <form method="post" enctype="multipart/form-data" name="signup" onsubmit="return checkpassword()">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="text-white">First Name</label>
+                                <input type="text" name="firstname" class="form-control" placeholder="Enter First Name" required pattern="[A-Za-z]+">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="text-white">Last Name</label>
+                                <input type="text" name="lastname" class="form-control" placeholder="Enter Last Name" required pattern="[A-Za-z]+">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="text-white">Email ID</label>
+                                <input type="email" name="email" class="form-control" placeholder="Enter Email Address" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="text-white">Contact</label>
+                                <input type="text" name="contact" class="form-control" placeholder="Contact Number" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="text-white">Password</label>
+                                <input type="password" name="pwd" class="form-control" placeholder="Enter Password" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="text-white">Confirm Password</label>
+                                <input type="password" name="cpwd" class="form-control" placeholder="Enter Password Again" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="text-white">Upload Image</label>
+                                <input type="file" name="userpic" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="text-white">Address</label>
+                                <textarea type="address" name="address" class="form-control" placeholder="Full Address" required></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                    <input type="submit" value="Submit" class="m-2 px-3 btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    {% if error == "no" %}
+    <script>
+        alert('Signup Successful');
+        window.location=('{% url 'donor_login' %}');
+    </script>
+    {% endif %}
+    {% if error == "yes" %}
+    <script>
+        alert('Something went wrong , Try Again...');
+    </script>
+    {% endif %}
+
+    {% include 'Home/Footer.html' %}
+</body>
+</html>

@@ -1,7 +1,9 @@
 from django.contrib import admin
-from Auth.models import Volunteer
+from .models import *
 
 # Register your models here.
-class VolunteerAdmin(admin.ModelAdmin):
-    list_display=('id', 'vid', 'vname', 'vemail')
-admin.site.register(Volunteer,VolunteerAdmin)
+admin.site.register(Donor)
+admin.site.register(Volunteer)
+admin.site.register(DonationArea)
+admin.site.register(Donation)
+admin.site.register(Gallery)

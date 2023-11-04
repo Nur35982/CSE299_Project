@@ -7,26 +7,23 @@
 </head>
 <body>
     {% include 'common_code/base.html' %}
-    <h1>{{vlntr}}</h1>
-    {% if vlntr %}
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>VID</th>
-            <th>VName</th>
-            <th>VEmail</th>
-        </tr>
-        {% for th in vlntr %}
-        <tr>
-            <td>{{th.id}}</td>
-            <td>{{th.vid}}</td>
-            <td>{{th.vname}}</td>
-            <td>{{th.vemail}}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    {% else %}
-    <h2>Empty db</h2>
-    {% endif %}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for volunteer in volunteer %}
+          <tr>
+            <td>{{volunteer.first_name}}</td>
+            <td>{{volunteer.last_name}}</td>
+            <td>{{volunteer.age}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
 </body>
 </html>

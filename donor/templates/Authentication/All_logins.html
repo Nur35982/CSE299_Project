@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css/' %}">
     <title>Document</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Donor</h4>
                         <p class="card-text">Some example text</p>
-                        <a href="{% url 'signin' %}" class="btn btn-primary">Go To Donor Login</a>
+                        <a href="{% url 'donor_login' %}" class="btn btn-primary">Go To Donor Login</a>
                     </div>
                 </div>
             </div>
@@ -27,7 +28,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Volunteer</h4>
                         <p class="card-text">Some example text</p>
-                        <a href="{% url 'volunteer' %}" class="btn btn-primary">Go To Volunteer Login</a>
+                        <a href="{% url 'volunteer_login' %}" class="btn btn-primary">Go To Volunteer Login</a>
                     </div>
                 </div>
             </div>
@@ -38,7 +39,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Admin</h4>
                         <p class="card-text">Some example text</p>
-                        <a href="" class="btn btn-primary">Go To Admin Login</a>
+                        <a href="{% url 'admin_login' %}" class="btn btn-primary">Go To Admin Login</a>
                     </div>
                 </div>
             </div>

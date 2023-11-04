@@ -1,0 +1,71 @@
+/*
+#signupform{
+    background:url('/static/images/volunteer-1888823_1920.png')
+}
+*/
+
+#login{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+    background-position: 0px 80px;
+}
+.col-lg-5 {
+    margin: 0 auto;
+}
+  
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 350px;
+}
+
+.card-title {
+    padding: 20px 0;
+}
+
+.card-body {
+    background-color: #343a40;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #454d55;
+    color: white;
+}
+
+.form-control::placeholder {
+    color: #ccc;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.text-white {
+    color: white;
+    text-decoration: none;
+}
+
+.text-white:hover {
+    text-decoration: underline;
+}
+
+.custom-img {
+    margin: 0 auto;
+    display: block;
+}
