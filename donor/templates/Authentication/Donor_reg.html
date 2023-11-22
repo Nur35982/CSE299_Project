@@ -29,7 +29,7 @@
         <div class="card-body">
             <h5 class="p-4 text-white" style="border-bottom : 2px solid orange">Creat an Account (Donor)</h5>
             <div class="container-fluid">
-                <form method="post" enctype="multipart/form-data" name="signup" onsubmit="return checkpassword()">
+                <form method="POST" enctype="multipart/form-data" name="signup" onsubmit="return checkpassword()">
                     {% csrf_token %}
                     <div class="form-row">
                         <div class="col-sm-12">

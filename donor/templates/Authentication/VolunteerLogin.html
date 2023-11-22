@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <form method="post">
                         {% csrf_token %}
-                        <div class="input-group mb-0">
+                        <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
                                     <i class="fa fa-user fa-2x"></i>
@@ -31,7 +31,7 @@
                             <input type="email" name="emailid" class="form-control py-4" placeholder="Email ID">
                         </div>
 
-                        <div class="input-group mb-0">
+                        <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
                                     <i class="fa fa-lock fa-2x"></i>
@@ -39,8 +39,8 @@
                             </div>
                             <input type="password" name="pwd" class="form-control py-4" placeholder="Password">
                         </div>
-                        <input type="submit" value="Login" class="btn btn-success px-4">
-                        <a href="{% url 'donor_reg' %}" class="float-right text-white mt-2">Create account</a>
+                        <input type="submit" value="Login" class="btn btn-success px-5">
+                        <a href="{% url 'volunteer_reg' %}" class="float-right text-white mt-2">Create account</a>
                     </form>
                 </div>
             </div>
@@ -51,12 +51,19 @@
     {% if error == "no" %}
     <script>
         alert('Logged In Successfully');
-        window.location=('{% url 'donor_home' %}');
+        window.location=('{% url 'volunteer_home' %}');
     </script>
     {% endif %}
+
     {% if error == "yes" %}
     <script>
         alert('Invalid Login Credentials , Try Again...');
+    </script>
+    {% endif %}
+
+    {% if error == "not" %}
+    <script>
+        alert('Your login status is pending.');
     </script>
     {% endif %}
 

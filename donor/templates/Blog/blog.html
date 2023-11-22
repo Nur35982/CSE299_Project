@@ -4,12 +4,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style6.css' %}">
     <title>Blogs</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    {% include 'common_code/base.html' %}
+
+    <header>
+        <div class="nav container">
+            <a href="#" class="logo">Donor<span>Management</span></a>
+            <a href="#" class="login">Sign Up</a>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-text container">
+            <h2 class="home-title">All you need to know  </h2>
+            <span class="home-subtitle">Necessary information about donations and others</span>
+            
+        </div>
+    </section>
+
+    <section class="about container" id="about">
+        <div class="contentBx">
+            <h2 class="titleText">Catch up with the trending topics</h2>
+            <p class="title-text">
+                Donation refers to the act of giving or contributing something, usually money, goods, or services, to a charitable organization or an individual in need. It is a voluntary and selfless act that aims to help others and make a positive impact on society.
+                <br> donations are a significant tool for individuals and organizations to make a positive impact, contribute to social change, and promote a culture of compassion and solidarity.
+            </p>
+            <a href="#" class="btn2">Read more</a>
+        </div>
+        <div class="imgBx">
+            <img src="{% static 'images/pic1.png' %}" alt="" class="fitBg">
+        </div>
+    </section>
+
+    <div class="post-filter container">
+        <span class="filter-item active-filter" data-filter="all">All</span>
+        <span class="filter-item" data-filter="articles">Articles</span>
+        <span class="filter-item" data-filter="function">Functions</span>
+        <span class="filter-item" data-filter="news">News</span>
+    </div>
+    
+    <div class="post container">
+        <!-- Post 1 -->
+        <div class="post-box articles">
+            <img src="{% static 'images/bachcha.jpg' %}" alt="" class="post-img">
+            <h2 class="category">Article</h2>
+            <a href="#" class="post-title">The Importance of Transparency in Charitable Giving</a>
+            <span class="post-date">28 Feb 2023</span>
+            <p class="post-description">Time and skills can also be donated, where individuals volunteer their time and expertise to support charitable causes. Offering one's time can involve activities such as mentoring, teaching, or providing direct services. </p>
+            <div class="profile">
+                <img src="{% static 'images/a1.jpg' %}" alt="" class="profile-img">
+                <span class="profile-name">Ridita</span>
+            </div>
+        </div>
+        <!-- Post 2 -->
+        <div class="post-box function">
+            <img src="{% static 'images/a1.jpg' %}" alt="" class="post-img">
+            <h2 class="category">function</h2>
+            <a href="#" class="post-title">The impact of donations can be significant.</a>
+            <span class="post-date">20 mar 2023</span>
+            <p class="post-description">There are various types of donations that individuals or organizations can make. Monetary donations involve giving money directly to a cause or organization. </p>
+            <div class="profile">
+                <img src="{% static 'images/a1.jpg' %}" alt="" class="profile-img">
+                <span class="profile-name">Ridita</span>
+            </div>
+        </div>
+        <!-- Post 3 -->
+        <div class="post-box function">
+            <img src="{% static 'images/a2.jpg' %}" alt="" class="post-img">
+            <h2 class="category">function</h2>
+            <a href="#" class="post-title">Effective Strategies for Fundraising and Maximizing Donations</a>
+            <span class="post-date">20 mar 2023</span>
+            <p class="post-description">Skills donations can range from professional expertise like legal advice or medical assistance to artistic talents such as painting murals or providing entertainment at fundraisers.</p>
+            <div class="profile">
+                <img src="{% static 'images/a1.jpg' %}" alt="" class="profile-img">
+                <span class="profile-name">Ridita</span>
+            </div>
+        </div>
+        <!-- Post 4 -->
+        <div class="post-box news">
+            <img src="{% static 'images/a3.jpg' %}" alt="" class="post-img">
+            <h2 class="category">News</h2>
+            <a href="#" class="post-title">The Impact of Corporate Donations on Nonprofit Organizations</a>
+            <span class="post-date">28 Feb 2023</span>
+            <p class="post-description">Many individuals and corporations choose to donate as a way to give back, express gratitude, or support causes that align with their values. Donations can be made as one-time contributions or through recurring commitments, and individuals can choose to remain anonymous or publicly recognized for their generosity.</p>
+            <div class="profile">
+                <img src="{% static 'images/a1.jpg' %}" alt="" class="profile-img">
+                <span class="profile-name">Ridita</span>
+            </div>
+        </div>
+        <!-- Post 5 -->
+        <div class="post-box articles">
+            <img src="{% static 'images/a4.jpg' %}" alt="" class="post-img">
+            <h2 class="category">Article</h2>
+            <a href="#" class="post-title">The Role of Technology in Streamlining the Donation Process</a>
+            <span class="post-date">15 apr 2023</span>
+            <p class="post-description">The recipient organizations must be transparent in their operations and have a proven track record of using donations effectively to achieve their mission.</p>
+            <div class="profile">
+                <img src="{% static 'images/a1.jpg' %}" alt="" class="profile-img">
+                <span class="profile-name">Lela</span>
+            </div>
+        </div>
+        <!-- Post 6 -->
+        <div class="post-box news">
+            <img src="{% static 'images/a5.png' %}" alt="" class="post-img">
+            <h2 class="category">News</h2>
+            <a href="#" class="post-title">Community-Based Fundraising Events</a>
+            <span class="post-date">15 apr 2022</span>
+            <p class="post-description">Social Causes: Addressing issues like poverty, education, healthcare, environmental conservation, human rights, disaster relief, etc.</p>
+            <div class="profile">
+                <img src="{% static 'images/a1.jpg' %}" alt="" class="profile-img">
+                <span class="profile-name">Ridita</span>
+            </div>
+        </div>
+        <!-- Post 7 -->
+        <div class="post-box articles">
+            <img src="{% static 'images/a6.jpg' %}" alt="" class="post-img">
+            <h2 class="category">Article</h2>
+            <a href="#" class="post-title">The Psychology of Giving</a>
+            <span class="post-date">10 aug 2022</span>
+            <p class="post-description">Supporting Healthcare Initiatives through Charitable Donations</p>
+            <div class="profile">
+                <img src="{% static 'images/a1.jpg' %}" alt="" class="profile-img">
+                <span class="profile-name">Banu</span>
+            </div>
+        </div>
+        <!-- Post 1 -->
+        <div class="post-box news">
+            <img src="{% static 'images/a8.jpg' %}" alt="" class="post-img">
+            <h2 class="category">News</h2>
+            <a href="#" class="post-title">Donating to Environmental Conservation</a>
+            <span class="post-date">10 aug 2022</span>
+            <p class="post-description">Organizing charity events like galas, auctions, runs/walks, or benefit concerts to raise funds.
+                Encouraging individuals to create personal fundraising campaigns and mobilize their networks to donate.</p>
+            <div class="profile">
+                <img src="{% static 'images/a1.jpg' %}" alt="" class="profile-img">
+                <span class="profile-name">Banu</span>
+            </div>
+        </div>
+        <!-- Post 9 -->
+        <div class="post-box function">
+            <img src="{% static 'images/a1.jpg' %}" alt="" class="post-img">
+            <h2 class="category">function</h2>
+            <a href="#" class="post-title">Supporting Healthcare Initiatives through Charitable Donations</a>
+            <span class="post-date">12 jan 2023</span>
+            <p class="post-description">Tax Deductible Donations: Understanding the tax implications and benefits of making charitable donations.</p>
+            <div class="profile">
+                <img src="{% static 'images/a9.jpg' %}" alt="" class="profile-img">
+                <span class="profile-name">Lela</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="sec aboutus">
+                <h2>About Us</h2>
+                <p>Donation is a broad topic that encompasses the act of giving money, goods, or services to individuals, organizations, or causes in need. It is a voluntary and selfless act that aims to make a positive impact on society and help those who are less fortunate.
+                </p>
+                <ul class="sci">
+                    <li><a href="#"><i class="bx bxl-facebook"></i></a></li>
+                    <li><a href="#"><i class="bx bxl-instagram"></i></a></li>
+                    <li><a href="#"><i class="bx bxl-twitter"></i></a></li>
+                    <li><a href="#"><i class="bx bxl-linkedin"></i></a></li>
+                </ul>
+            </div>
+            
+            <div class="sec contactBx">
+                <h2>Contact Info</h2>
+                <ul class="info">
+                    <li>
+                        <span><i class='bx bxs-map'></i></span>
+                        <span>North south university <br> Bd</span>
+                    </li>
+                    <li>
+                        <span><i class='bx bx-envelope' ></i></span>
+                        <p><a href="mailto:nahiyan109@gmail.com">nahiyan109@gmail.com</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    
 
 
-    {% include 'Home/Footer.html' %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+    
 </body>
 </html>

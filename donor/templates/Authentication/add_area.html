@@ -1,0 +1,54 @@
+{% extends 'Authentication\admin_base.html'%}
+
+{% block main %}
+
+
+<div class="card shadow">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom : 2px solid orange">Add Donation Area</h5>
+    <div class="container-fluid">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-row">
+                
+        
+        
+                <!-- Donation Collection Address Textarea -->
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label>Donation Area Name</label>
+                        <input type="text" name="areaname" class="form-control" placeholder="Donation Area" required></input>
+                    </div>
+                </div>
+        
+                <!-- Descriptions (Special Note) Textarea -->
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea name="description" class="form-control" placeholder="Description" required></textarea>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Submit Button -->
+            <input type="submit" value="Submit" class="btn btn-danger px-3">
+        </form>
+    </div>
+    </div>
+</div>
+
+
+{% if error == "no" %}
+    <script>
+        alert('Donation area has been added');
+        window.location=('{% url 'manage_area' %}');
+    </script>
+    {% endif %}
+    
+    {% if error == "yes" %}
+    <script>
+        alert('Something went wrong , Try Again...');
+    </script>
+{% endif %}
+
+{% endblock %}

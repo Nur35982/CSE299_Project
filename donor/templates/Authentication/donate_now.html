@@ -7,52 +7,54 @@
         <h5 class="p-2" style="border-bottom : 2px solid orange">Donate Now</h5>
 
         <div class="container-fluid">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-row">
                     <div class="col-sm-12">
+                        <!-- Donation Name Select -->
                         <div class="form-group">
-                        <label for="">Donation Name <span style="color : red">(Note : If you select other, please mention details in descriptions field.)</span></label>
-                        <select name="donationname" class="form-control" id="" required>
-                            <option value="Food Donation">Food Donation</option>
-                            <option value="Cloth Donation">Cloth Donation</option>
-                            <option value="Footwear Donation">Footwear Donation</option>
-                            <option value="Books Donation">Books Donation</option>
-                            <option value="Vessel Donation">Vessel Donation</option>
-                            <option value="Toy Donation">Toy Donation</option>
-                            <option value="Others">Others</option>
-                        </select>
+                            <label>Donation Name <span style="color: red">(Note: If you select other, please mention details in descriptions field.)</span></label>
+                            <select name="donationname" class="form-control">
+                                <option value="Food Donation">Food Donation</option>
+                                <option value="Cloth Donation">Cloth Donation</option>
+                                <option value="Footwear Donation">Footwear Donation</option>
+                                <option value="Books Donation">Books Donation</option>
+                                <option value="Vessel Donation">Vessel Donation</option>
+                                <option value="Toy Donation">Toy Donation</option>
+                                <option value="Others">Others</option>
+                            </select>
                         </div>
-        
+                    </div>
+            
+                    <!-- Donation Image Input -->
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Donation Image</label>
+                            <input type="file" name="donationpic" class="form-control" required>
+                        </div>
+                    </div>
+            
+                    <!-- Donation Collection Address Textarea -->
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Donation Collection Address</label>
+                            <textarea name="collectionloc" class="form-control" placeholder="Enter Full Address" required></textarea>
+                        </div>
+                    </div>
+            
+                    <!-- Descriptions (Special Note) Textarea -->
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Descriptions (Special Note)</label>
+                            <textarea name="description" class="form-control" placeholder="Special note for donations" required></textarea>
+                        </div>
                     </div>
                 </div>
-
-                <div class="form-row">
-                    <div class="col-sm-12">
-                        <div class="form-group">
-                        <label for="">Donation Image</label>
-                        <input type="file" name="donationpic" class="form-control" required>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12">
-                        <div class="form-group">
-                        <label for="">Donation Collection Address</label>
-                        <textarea name="collectionloc" class="form-control" placeholder="Enter Full Address" required></textarea>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12">
-                        <div class="form-group">
-                        <label for="">Descriptions(Special Note)</label>
-                        <textarea name="description" class="form-control" placeholder="Special note for donations" required></textarea>
-                        </div>
-                    </div>
-
-                </div>
+            
+                <!-- Submit Button -->
                 <input type="submit" value="Donate Happiness" class="btn btn-danger px-3">
-
             </form>
+            
         </div>
     </div>
 </div>
@@ -63,6 +65,7 @@
         window.location=('{% url 'donation_history' %}');
     </script>
     {% endif %}
+    
     {% if error == "yes" %}
     <script>
         alert('Something went wrong , Try Again...');
